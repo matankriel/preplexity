@@ -23,13 +23,3 @@ class HTMLTextParser:
             return soup.get_text(strip=True)
         else:
             raise Exception(f"Failed to retrieve URL. Status code: {response.status_code}")
-
-# Example usage:
-if __name__ == "__main__":
-    parser = HTMLTextParser()
-    url = "https://google.com"
-    try:
-        text = parser.get_text_from_url(url)
-        print(text)
-    except Exception as e:
-        print(f"Error: {e}")

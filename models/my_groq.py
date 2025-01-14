@@ -68,10 +68,3 @@ class GroqSearchQuery:
                     raise e
 
         raise Exception("All models have reached their request limits or failed.")
-
-# Example usage:
-if __name__ == "__main__":
-    groq_query = GroqSearchQuery()
-    query = "How to improve Python coding skills?"
-    best_search_term = groq_query.get_best_search_term(query)
-    print(f"Best search term: {best_search_term}")

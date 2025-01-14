@@ -35,22 +35,12 @@ class GoogleSearchAPI:
         
         # Decode and parse the JSON response
         response_json = json.loads(data.decode("utf-8"))
-        #print("Response JSON:", json.dumps(response_json, indent=2))
 
         # Extract the first organic search result
         organic_results = response_json.get("organic", [])
-        #print("Organic search results:", organic_results)
         if organic_results:
             print(organic_results[0].get("link"))
             return organic_results[0].get("link")  # Return the "link" of the first organic result
         else:
             print("No organic search results found in the response.")
             return None
-
-# Example usage
-
-if __name__ == "__main__":
-    search_api = GoogleSearchAPI()
-    query = "border collie breed information characteristics temperament"
-    first_result_url = search_api.get_first_search_result(query)
-    print(f"First search result URL: {first_result_url}")
